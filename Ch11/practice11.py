@@ -40,52 +40,52 @@ homedir=''
 # print "rules:",rules
 # print ":",
 
-# #11.5　示例：发现国会投票中的模式
-# # from time import sleep
-# # from votesmart import votesmart
-# # votesmart. apikey = '49024thereoncewasamanfromnantucket94040'
-# # bills = votesmart. votes. getBillsByStateRecent()
-# # for bill in bills:
-# # 	print bill. title, bill. billId
-# # bill = votesmart. votes. getBill( 11820)
-# # bill. actions
-# # for action in bill. actions:
-# # 	if action. stage==' Passage':
-# # 		print action. actionId
-# # voteList = votesmart. votes. getBillActionVotes( 31670)
-# # voteList[22]
-# # voteList[21]
-# # actionIdList, billTitles = apriori. getActionIds()
-# # transDict, itemMeaning= apriori. getTransList( actionIdList[: 2], billTitles[: 2])
-# # transDict.keys()[ 6]
-# # for item in transDict[' Doyle, Michael 'Mike'']:
-# # 	print itemMeaning[ item]
-# # transDict, itemMeaning= apriori. getTransList( actionIdList, billTitles)
-# # dataSet = [transDict[ key] for key in transDict. keys()]
-#
-# #11.5.2　测试算法：基于美国国会投票记录挖掘关联规则
-# # L, suppData= apriori.apriori(dataSet,minSupport= 0.5)
-# # print "L:",L
-# # L, suppData= apriori.apriori(dataSet,minSupport= 0.3)
-# # print "len(L):",len(L)
-# # print "L[3]:",L[3]
-# # rules = apriori.generateRules(L,suppData)
-# # print "rules:",rules
-# # rules = apriori.generateRules(L,suppData,minConf=0.95)
-# # print "rules:",rules
-# # rules = apriori.generateRules(L,suppData,minConf=0.99)
-# # print "rules:",rules
-# # # print "itemMeaning[26]:",itemMeaning[26]
-# # # print "itemMeaning[3]:",itemMeaning[3]
-# # # print "itemMeaning[9]:",sitemMeaning[9]
-#
+# 11.5　示例：发现国会投票中的模式
+# from time import sleep
+# from votesmart import votesmart
+# votesmart. apikey = '49024thereoncewasamanfromnantucket94040'
+# bills = votesmart. votes. getBillsByStateRecent()
+# for bill in bills:
+# 	print bill. title, bill. billId
+# bill = votesmart. votes. getBill( 11820)
+# bill. actions
+# for action in bill. actions:
+# 	if action. stage==' Passage':
+# 		print action. actionId
+# voteList = votesmart. votes. getBillActionVotes( 31670)
+# voteList[22]
+# voteList[21]
+# actionIdList, billTitles = apriori. getActionIds()
+# transDict, itemMeaning= apriori. getTransList( actionIdList[: 2], billTitles[: 2])
+# transDict.keys()[ 6]
+# for item in transDict[' Doyle, Michael 'Mike'']:
+# 	print itemMeaning[ item]
+# transDict, itemMeaning= apriori. getTransList( actionIdList, billTitles)
+# dataSet = [transDict[ key] for key in transDict. keys()]
+
+#11.5.2　测试算法：基于美国国会投票记录挖掘关联规则
+# L, suppData= apriori.apriori(dataSet,minSupport= 0.5)
+# print "L:",L
+# L, suppData= apriori.apriori(dataSet,minSupport= 0.3)
+# print "len(L):",len(L)
+# print "L[3]:",L[3]
+# rules = apriori.generateRules(L,suppData)
+# print "rules:",rules
+# rules = apriori.generateRules(L,suppData,minConf=0.95)
+# print "rules:",rules
+# rules = apriori.generateRules(L,suppData,minConf=0.99)
+# print "rules:",rules
+# # print "itemMeaning[26]:",itemMeaning[26]
+# # print "itemMeaning[3]:",itemMeaning[3]
+# # print "itemMeaning[9]:",sitemMeaning[9]
+
 # #11.6　示例：发现毒蘑菇的相似特征
-mushDatSet= [line.split() for line in open(homedir+'mushroom.dat').readlines()]
-L, suppData=apriori.apriori(mushDatSet,minSupport= 0.4)
-print "mushDatSet:",mushDatSet
-print "L:",L
-print "suppData:",suppData
-for item in L[1]:
-    if item.intersection('2'): print item
-for item in L[3]:
-    if item.intersection('2'): print item
+# mushDatSet= [line.split() for line in open(homedir+'mushroom.dat').readlines()]
+# L, suppData=apriori.apriori(mushDatSet,minSupport= 0.4)
+# print "mushDatSet:",mushDatSet
+# print "L:",L
+# print "suppData:",suppData
+# for item in L[1]:
+#     if item.intersection('2'): print item
+# for item in L[3]:
+#     if item.intersection('2'): print item

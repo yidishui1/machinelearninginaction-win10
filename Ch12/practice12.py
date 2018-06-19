@@ -3,6 +3,8 @@
 import os
 import fpGrowth
 
+
+
 # homedir=os.getcwd()+'/machinelearninginaction/ch12/'
 homedir=''
 
@@ -36,15 +38,32 @@ homedir=''
 # print "freqItems:",freqItems
 
 # #12.5　示例：从新闻网站点击流中挖掘
-parsedDat=[line.split() for line in open(homedir+'kosarak.dat').readlines()]
+# parsedDat=[line.split() for line in open(homedir+'kosarak.dat').readlines()]
+# # print "parsedDat:",parsedDat
+# initSet=fpGrowth.createInitSet(parsedDat)
+# # print "initSet:",initSet
+# # print ":",
+# myFPtree,myHeaderTab=fpGrowth.createTree(initSet,100000)
+# myFPtree.disp()
+# print "myHeaderTab:",myHeaderTab
+# myFreqList=[]
+# fpGrowth.mineTree(myFPtree,myHeaderTab,100000,set([]),myFreqList)
+# # print "len(myFreqList):",len(myFreqList)
+# print "myFreqList:",myFreqList
+
+# #12.6　示例：从图灵书籍中挖掘
+import sys
+# print sys.getdefaultencoding()
+# print sys.stdout.encoding
+parsedDat=[line.split() for line in open(homedir+'anjuke.dat').readlines()]
 # print "parsedDat:",parsedDat
 initSet=fpGrowth.createInitSet(parsedDat)
 # print "initSet:",initSet
 # print ":",
-myFPtree,myHeaderTab=fpGrowth.createTree(initSet,100000)
-myFPtree.disp()
-print "myHeaderTab:",myHeaderTab
+myFPtree,myHeaderTab=fpGrowth.createTree(initSet,20)
+# myFPtree.disp()
+#print "myHeaderTab:",myHeaderTab
 myFreqList=[]
-fpGrowth.mineTree(myFPtree,myHeaderTab,100000,set([]),myFreqList)
+fpGrowth.mineTree(myFPtree,myHeaderTab,20,set([]),myFreqList)
 # print "len(myFreqList):",len(myFreqList)
-print "myFreqList:",myFreqList
+#print "myFreqList:",myFreqList
